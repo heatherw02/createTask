@@ -1,0 +1,35 @@
+ .grid-container{
+    display: grid;
+    grid-template-columns: 200px 600px;
+    grid-template-rows: 250px 50px;
+    grid-gap: 5px;
+    align-content: center;
+ }
+
+ .button-panel{
+    display: grid;
+    grid-template-columns: 156px 156px 156px;
+    grid-template-rows: 156px 156px 156px;
+    grid-gap: 55px;
+    
+ }
+
+ #pic1-img{
+    width: 10;
+
+ }
+
+ .hold-but {
+    color: black;
+    background-color: yellow;
+ }
+
+ .roll-but {
+    color: black;
+    background-color: greenyellow;
+ }
+
+ .end-but {
+    color: black;
+    background-color: tan;
+ }

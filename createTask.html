@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="createTask.css">
+    <script src="createTask.js"></script>
+</head>
+<body>
+    <div class="title">
+        <br>  Bầu cua cá cọp</br>
+          To WIN you must have the most coins
+      </div>
+
+      <br class="long">
+          HOW TO PLAY:
+         <br> - Place as much as coins you want/have on a one or more animal </br>
+          - Once you finish placing your coin, then click [hold], then it's the next player turn 
+          <br>- Once everyone have placed their coins, roll the three dice</br>
+          - If the dice lands on the animal, you placed your coins on, you get coins
+          <br> - To determine how much coins you get is: 
+              animal (# of dice of that specfic animal) * coins (you bet on)</br>
+               Ex: 2 horse dice * 3 coins you bet on horse = 6 coins 
+          <br> - If you wish to end game click [end] </br>
+          <br> - Note: Game will end when user decides to end it or everyone but one player have 0 coins left
+          
+      </p>
+    <div class="grid-container">
+        
+        <div if="p1-background">
+            <h2 id="p1-name">Player 1</h2>
+            <p id="p1-text">It is YOUR turn</p>
+            <h1 id="p1-coins">Coins: 10</h1>
+        </div>
+
+        <div if="p2-background">
+            <h2 id="p2-name">Player 2</h2>
+            <p id="p2-text">It is NOT your turn</p>
+            <h1 id="p2-coins">Coins: 10</h1>
+        </div>
+
+        <div class="button-panel">
+            <button class="button-1" onclick="click1()">
+                <img id="pic1-img" src="./photos/pic1.jpg">
+            </button>
+
+            <button class="button-2" onclick="click2()">
+                <img id="pic2-img" src="./photos/pic2.jpg">
+            </button>
+
+            <button class="button-3" onclick="click3()">
+                <img id="pic3-img" src="./photos/pic3.jpg">
+            </button>
+
+            <button class="button-4" onclick="click4()">
+                <img id="pic4-img" src="./photos/pic4.jpg">
+            </button>
+
+            <button class="button-5" onclick="click5()">
+                <img id="pic5-img" src="./photos/pic5.jpg">
+            </button>
+
+            <button class="button-6" onclick="click6()">
+                <img id="pic6-img" src="./photos/pic6.jpg">
+            </button>
+
+            <button class="hold-but" onclick="hold()">Hold</button>
+            <button class="end-but" onclick="end()">End</button>
+            <button class="roll-but" onclick="roll()">Roll</button>
+            <img id="dice1-img" src="./photos/pic4.jpg">
+            <img id="dice2-img" src="./photos/pic4.jpg">
+            <img id="dice3-img" src="./photos/pic4.jpg">
+
+
+        </div>
+    </div>
+</body>
+</html>
