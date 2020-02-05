@@ -29,7 +29,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===1 && diceB===1)
+                same=2
+            else if(diceB===1 && diceC===1)
+                same=2
+            else if(diceA===1 && diceC===1)
+                same=2
+            else
+                same=1
+
+        }
         else
         same=1
 
@@ -40,7 +49,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===2 && diceB===2)
+            same=2
+        else if(diceB===2 && diceC===2)
+            same=2
+        else if(diceA===2 && diceC===2)
+            same=2
+        else
+            same=1
+
+    }
         else
         same=1
 
@@ -51,7 +69,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===3 && diceB===3)
+            same=2
+        else if(diceB===3 && diceC===3)
+            same=2
+        else if(diceA===3 && diceC===3)
+            same=2
+        else
+            same=1
+
+    }
         else
         same=1
 
@@ -62,7 +89,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===4 && diceB===4)
+            same=2
+        else if(diceB===4 && diceC===4)
+            same=2
+        else if(diceA===4 && diceC===4)
+            same=2
+        else
+            same=1
+
+    }
         else
         same=1
 
@@ -73,7 +109,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===5 && diceB===5)
+            same=2
+        else if(diceB===5 && diceC===5)
+            same=2
+        else if(diceA===5 && diceC===5)
+            same=2
+        else
+            same=1
+
+    }
         else
         same=1
 
@@ -84,7 +129,16 @@ function roll()
         if(diceA===diceB && diceB===diceC)
         same=3
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
-        same=2
+        {   if(diceA===6 && diceB===6)
+            same=2
+        else if(diceB===6 && diceC===6)
+            same=2
+        else if(diceA===6 && diceC===6)
+            same=2
+        else
+            same=1
+
+    }
         else
         same=1
 
@@ -109,11 +163,29 @@ function roll()
        
    }
     
-   
+ p1Bet1=0
+ p1Bet2=0
+ p1Bet3=0
+ p1Bet4=0
+ p1Bet5=0 
+ p1Bet6=0 
+ 
+ p2Bet1=0
+ p2Bet2=0
+ p2Bet3=0 
+ p2Bet4=0 
+ p2Bet5=0
+ p2Bet6=0
 
 
     document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
     document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+    if(p1 === 0 && p2 > 0)
+    confirm('Congradulation Player two! You Just Won!')
+    if else(p2 === 0 && p1 > 0)
+    confirm('Congradulation Player one! You Just Won!')
+    else(p1 === 0 && p2 === 0)
+    confirm('Looks like you both LoST')
 
 }
 
@@ -127,28 +199,43 @@ function hold()
         current_player=1
 }
 
+
+//THERES AN ERROR W THE BUTTON NOW..
 function click1()
 {
     if(current_player===1)
     {
-
-    p1Bet1++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
         if(p1===0)
-        {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
         }
+        else
+        {
+        p1Bet1++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+            }
+        }
+        
     }
     else
     {
-
-    p2Bet1++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
         if(p2===0)
-        {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p2Bet1++
+        p2--
+        document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+            }
         }
     }
 }
@@ -157,24 +244,36 @@ function click2()
 {
     if(current_player===1)
     {
-
-    p1Bet2++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
         if(p1===0)
-        {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p1Bet2++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + 'you have no more coins :(')
+                hold()
+            }
         }
     }
     else
     {
-
-    p2Bet2++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-    if(p2===0)
-        {   console.log('You have no more coins to bet on :(')
+        if(p2===0)
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p2Bet2++
+        p2--
+        document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+            }
         }
     }
 }
@@ -183,24 +282,36 @@ function click3()
 {
     if(current_player===1)
     {
-
-    p1Bet3++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-    if(p1===0)
-        {   console.log('You have no more coins to bet on :(')
+        if(p1===0)
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p1Bet3++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+            }
         }
     }
     else
     {
-
-    p2Bet3++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-    if(p2===0)
-        {   console.log('You have no more coins to bet on :(')
+        if(p2===0)
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p2Bet3++
+        p2--
+        document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+            hold()
+            }
         }
     }
 }
@@ -209,25 +320,37 @@ function click4()
 {
     if(current_player===1)
     {
-
-    p1Bet4++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-    if(p1===0)
-        {   console.log('You have no more coins to bet on :(')
+        if(p1===0)
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
             hold()
+        }
+        else
+        {
+        p1Bet4++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+            }
         }
     }
     else
     {
-
-    p2Bet4++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
         if(p2===0)
-            {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+        }
+        else
+        {
+        p2Bet4++
+        p2--
+        document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
                 hold()
             }
+        }
     }
 }
 
@@ -235,25 +358,38 @@ function click5()
 {
     if(current_player===1)
     {
-
-    p1Bet5++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
         if(p1===0)
-            {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+        }
+        else
+        {
+        p1Bet5++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+        
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
                 hold()
             }
+        }
     }
     else
     {
-
-    p2Bet5++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
         if(p2===0)
-            {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+        }
+        else
+        {
+         p2Bet5++
+         p2--
+         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
                 hold()
             }
+        }
     }
 }
 
@@ -261,25 +397,38 @@ function click6()
 {
     if(current_player===1)
     {
-
-    p1Bet6++
-    p1--
-    document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
         if(p1===0)
-            {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+        }
+        else
+        {
+        p1Bet6++
+        p1--
+        document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
+            if(p1===0)
+            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
                 hold()
             }
+        }
     }
     else
     {
-
-    p2Bet6++
-    p2--
-    document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
         if(p2===0)
-            {   console.log('You have no more coins to bet on :(')
+        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+        }
+        else
+        {
+        p2Bet6++
+        p2--
+        document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
+        
+            if(p2===0)
+            {   confirm('STOP. Player ' + current_player + ', you have no more coins :(')
                 hold()
             }
+        }
     }
 }
 
