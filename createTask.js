@@ -1,9 +1,12 @@
 /*
 Bầu cua cá cọp is a Vietnamese game involve with gambling. 
+
+Note: Everything should be working, but i want to add more players to the game and fix the css 
+
 */
 
 let diceA, diceB, diceC
-let p1=10, p2=10,p3=10,p4=10 //nums of player's coins
+let p1=10, p2=10 //nums of player's coins
 let p1Bet1=0, p1Bet2=0, p1Bet3=0, p1Bet4=0, p1Bet5=0, p1Bet6=0 //player one bets
 let p2Bet1=0, p2Bet2=0, p2Bet3=0, p2Bet4=0, p2Bet5=0, p2Bet6=0
 let current_player = 1
@@ -51,14 +54,13 @@ function roll()
         else if(diceA===diceB || diceB===diceC || diceA===diceC)
         {   if(diceA===2 && diceB===2)
             same=2
-        else if(diceB===2 && diceC===2)
+            else if(diceB===2 && diceC===2)
             same=2
-        else if(diceA===2 && diceC===2)
+            else if(diceA===2 && diceC===2)
             same=2
-        else
+            else
             same=1
-
-    }
+        }
         else
         same=1
 
@@ -148,20 +150,14 @@ function roll()
     
 
    // the MAtH
-   for(let h = 1; h <= 2; h++ )
-   {
-        if(h === 1)
-        {
+ 
             test1 = (p1Bet1 * deer) + (p1Bet2 * fruit) + (p1Bet3 * chick) + (p1Bet4 * fish) +  (p1Bet5 * crab) + (p1Bet6 * lobster)
             p1 += test1
-        }
-        else(h === 2)
-        {
-            test2 = (p2Bet1 * deer) + (p2Bet2 * fruit) + (p2Bet3 * chick) + (p2Bet4 * fish) + (p2Bet5 * crab) + (p2Bet6 * lobster)
+
+
+            test2 = (p2Bet1 * deer) + (p2Bet2 * fruit) + (p2Bet3 * chick) + (p2Bet4 * fish) +  (p2Bet5 * crab) + (p2Bet6 * lobster)
             p2 += test2
-        }
-       
-   }
+      
     
  p1Bet1=0
  p1Bet2=0
@@ -180,13 +176,7 @@ function roll()
 
     document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
     document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-    if(p1 === 0 && p2 > 0)
-    confirm('Congradulation Player two! You Just Won!')
-    if else(p2 === 0 && p1 > 0)
-    confirm('Congradulation Player one! You Just Won!')
-    else(p1 === 0 && p2 === 0)
-    confirm('Looks like you both LoST')
-
+   
 }
 
 function hold()
@@ -200,7 +190,7 @@ function hold()
 }
 
 
-//THERES AN ERROR W THE BUTTON NOW..
+
 function click1()
 {
     if(current_player===1)
@@ -430,6 +420,23 @@ function click6()
             }
         }
     }
+}
+
+function end()
+{
+    if(p1 > p2)
+    {
+        confirm('YOU WIN PLAYER ONE! You had the most coins! ENJOY Your ' + p1 + ' coins' )
+    }
+    else if(p2 > p1)
+    {
+        confirm('YOU WIN PLAYER TWO! You had the most coins! ENJOY Your ' + p2 + ' coins' )
+    }
+    else if(p1 === p2)
+    {
+        confirm('Its a tie...no1 lose but no1 win. You guys both have ' + p1 + ' coins')
+    }
+
 }
 
 
