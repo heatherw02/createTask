@@ -1,7 +1,7 @@
  .grid-container{
     display: grid;
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 250px 250px 250px;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 250px 250px 250px 250px;
     grid-gap: 5px;
     align-content: center;
  }
@@ -63,6 +63,22 @@
   }
 
   #p2-background {
+   background-color: grey;
+   color: black;
+   padding: 10px;
+   border-radius: 12px;
+   border: 1px solid black;
+  }
+
+  #p3-background {
+   background-color: grey;
+   color: black;
+   padding: 10px;
+   border-radius: 12px;
+   border: 1px solid black;
+  }
+
+  #p4-background {
    background-color: grey;
    color: black;
    padding: 10px;
