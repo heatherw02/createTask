@@ -1,8 +1,6 @@
 /*
 Bầu cua cá cọp is a Vietnamese game involve with gambling. 
-
 Note: Everything should be working, but i want to add more players to the game and fix the css 
-
 */
 
 let diceA, diceB, diceC
@@ -25,7 +23,7 @@ function roll()
     let same=0
     let deer=0,fruit=0, chick=0, fish=0,crab=0,lobster=0
 
-
+    dice(same, diceA, diceB, diceC, deer, fruit, chick, fish, crab, lobster)
 
     if(diceA===1 || diceB===1 || diceC===1) 
     {
@@ -159,19 +157,8 @@ function roll()
             p2 += test2
       
     
- p1Bet1=0
- p1Bet2=0
- p1Bet3=0
- p1Bet4=0
- p1Bet5=0 
- p1Bet6=0 
- 
- p2Bet1=0
- p2Bet2=0
- p2Bet3=0 
- p2Bet4=0 
- p2Bet5=0
- p2Bet6=0
+ p1Bet1=0, p1Bet2=0, p1Bet3=0, p1Bet4=0, p1Bet5=0, p1Bet6=0 
+ p2Bet1=0, p2Bet2=0, p2Bet3=0, p2Bet4=0, p2Bet5=0, p2Bet6=0
 
 
     document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
@@ -179,25 +166,51 @@ function roll()
    
 }
 
+
 function hold()
 {
-    if(current_player===1)
+    if(current_player===2)
     {
-        current_player=2
+        
+        document.getElementById('p1-background').style.backgroundColor = 'yellow'
+    
+        document.getElementById('p2-background').style.backgroundColor = 'grey'
+
+        
+        
+        current_player=1
     }
     else
-        current_player=1
+    { 
+        document.getElementById('p1-background').style.backgroundColor = 'grey'
+    
+        document.getElementById('p2-background').style.backgroundColor = 'yellow'
+
+        
+        current_player=2
+    }
 }
 
 
+
+function bye1(current_player)
+{
+    confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
+            hold()
+}
+
+function bye2(current_player)
+{
+    confirm('STOP. Player ' + current_player + ' you have no more coins :(')
+                hold()
+}
 
 function click1()
 {
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -205,8 +218,7 @@ function click1()
         p1--
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
         
@@ -214,8 +226,7 @@ function click1()
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -223,8 +234,7 @@ function click1()
         p2--
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {    bye2(current_player)
             }
         }
     }
@@ -235,8 +245,7 @@ function click2()
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -244,16 +253,14 @@ function click2()
         p1--
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + 'you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -261,8 +268,7 @@ function click2()
         p2--
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
@@ -273,8 +279,7 @@ function click3()
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -282,16 +287,14 @@ function click3()
         p1--
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -299,8 +302,7 @@ function click3()
         p2--
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-            hold()
+            {   bye2(current_player)
             }
         }
     }
@@ -311,8 +313,7 @@ function click4()
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -320,16 +321,14 @@ function click4()
         p1--
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {  bye2(current_player)
             }
         }
     }
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -337,8 +336,7 @@ function click4()
         p2--
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
@@ -349,8 +347,7 @@ function click5()
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -359,16 +356,14 @@ function click5()
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
         
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        {bye1(current_player)
         }
         else
         {
@@ -376,8 +371,7 @@ function click5()
          p2--
          document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
@@ -388,8 +382,7 @@ function click6()
     if(current_player===1)
     {
         if(p1===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -397,16 +390,14 @@ function click6()
         p1--
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
             if(p1===0)
-            {   confirm('STOP. Player ' + current_player + ' you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
     else
     {
         if(p2===0)
-        { confirm('Yikes. Player ' + current_player + ' you have no coins soo..you basically lost.')
-            hold()
+        { bye1(current_player)
         }
         else
         {
@@ -415,8 +406,7 @@ function click6()
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
         
             if(p2===0)
-            {   confirm('STOP. Player ' + current_player + ', you have no more coins :(')
-                hold()
+            {   bye2(current_player)
             }
         }
     }
@@ -438,5 +428,3 @@ function end()
     }
 
 }
-
-
