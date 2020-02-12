@@ -1,7 +1,7 @@
  .grid-container{
     display: grid;
-    grid-template-columns: 200px 600px;
-    grid-template-rows: 250px 50px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 250px 250px 250px;
     grid-gap: 5px;
     align-content: center;
  }
@@ -15,13 +15,14 @@
  }
 
  #pic1-img{
-    width: 10;
-
+    width: 156px;
+    padding-bottom: 10px;
+    padding-right: 500px;
  }
 
  .hold-but {
     color: black;
-    background-color: yellow;
+    background-color:pink;
  }
 
  .roll-but {
@@ -33,3 +34,22 @@
     color: black;
     background-color: tan;
  }
+
+  #p1-background {
+   background-color:yellow;
+   color: black;
+   padding: 10px;
+   border-radius: 12px;
+   border: 1px solid black;
+  }
+
+  #p2-background {
+   background-color: grey;
+   color: black;
+   padding: 10px;
+   border-radius: 12px;
+   border: 1px solid black;
+  }
+
+
+ 
