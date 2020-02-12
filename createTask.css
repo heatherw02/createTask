@@ -8,21 +8,40 @@
 
  .button-panel{
     display: grid;
-    grid-template-columns: 156px 156px 156px;
-    grid-template-rows: 156px 156px 156px;
+    grid-template-columns: 146px 146px 146px;
+    grid-template-rows: 146px 146px 146px;
     grid-gap: 55px;
     
  }
-
- #pic1-img{
-    width: 156px;
-    padding-bottom: 10px;
-    padding-right: 500px;
+ 
+ .button-1 {
+    background-image: url('./photos/pic1.jpg');
  }
+
+ .button-2 {
+    background-image: url('./photos/pic2.jpg');
+ }
+
+ .button-3 {
+   background-image: url('./photos/pic3.jpg');
+}
+
+.button-4 {
+   background-image: url('./photos/pic4.jpg');
+}
+
+.button-5 {
+   background-image: url('./photos/pic5.jpg');
+}
+
+.button-6 {
+   background-image: url('./photos/pic6.jpg');
+}
+ 
 
  .hold-but {
     color: black;
-    background-color:pink;
+    background-color: yellow;
  }
 
  .roll-but {
@@ -36,7 +55,7 @@
  }
 
   #p1-background {
-   background-color:yellow;
+   background-color: pink;
    color: black;
    padding: 10px;
    border-radius: 12px;
@@ -50,6 +69,3 @@
    border-radius: 12px;
    border: 1px solid black;
   }
-
-
- 
