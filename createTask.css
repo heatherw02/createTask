@@ -1,87 +1,87 @@
- .grid-container{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 250px 250px 250px 250px;
-    grid-gap: 5px;
-    align-content: center;
- }
+.grid-container{
+   display: grid;
+   grid-template-columns: 200px 200px 200px 200px;
+   grid-template-rows: 250px 250px 250px 250px;
+   grid-gap: 5px;
+   align-content: center;
+}
 
- .button-panel{
-    display: grid;
-    grid-template-columns: 146px 146px 146px;
-    grid-template-rows: 146px 146px 146px;
-    grid-gap: 55px;
-    
- }
- 
- .button-1 {
-    background-image: url('./photos/pic1.jpg');
- }
+.button-panel{
+   display: grid;
+   grid-template-columns: 146px 146px 146px;
+   grid-template-rows: 146px 146px 146px;
+   grid-gap: 55px;
+   
+}
 
- .button-2 {
-    background-image: url('./photos/pic2.jpg');
- }
+.button-1 {
+   background-image: url('./photos/pic1.jpg');
+}
 
- .button-3 {
-   background-image: url('./photos/pic3.jpg');
+.button-2 {
+   background-image: url('./photos/pic2.jpg');
+}
+
+.button-3 {
+  background-image: url('./photos/pic3.jpg');
 }
 
 .button-4 {
-   background-image: url('./photos/pic4.jpg');
+  background-image: url('./photos/pic4.jpg');
 }
 
 .button-5 {
-   background-image: url('./photos/pic5.jpg');
+  background-image: url('./photos/pic5.jpg');
 }
 
 .button-6 {
-   background-image: url('./photos/pic6.jpg');
+  background-image: url('./photos/pic6.jpg');
 }
- 
 
- .hold-but {
-    color: black;
-    background-color: yellow;
+
+.hold-but {
+   color: black;
+   background-color: yellow;
+}
+
+.roll-but {
+   color: black;
+   background-color: greenyellow;
+}
+
+.end-but {
+   color: black;
+   background-color: tan;
+}
+
+ #p1-background {
+  background-color: pink;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
  }
 
- .roll-but {
-    color: black;
-    background-color: greenyellow;
+ #p2-background {
+  background-color: grey;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
  }
 
- .end-but {
-    color: black;
-    background-color: tan;
+ #p3-background {
+  background-color: grey;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
  }
 
-  #p1-background {
-   background-color: pink;
-   color: black;
-   padding: 10px;
-   border-radius: 12px;
-   border: 1px solid black;
-  }
-
-  #p2-background {
-   background-color: grey;
-   color: black;
-   padding: 10px;
-   border-radius: 12px;
-   border: 1px solid black;
-  }
-
-  #p3-background {
-   background-color: grey;
-   color: black;
-   padding: 10px;
-   border-radius: 12px;
-   border: 1px solid black;
-  }
-
-  #p4-background {
-   background-color: grey;
-   color: black;
-   padding: 10px;
-   border-radius: 12px;
-   border: 1px solid black;
-  }
+ #p4-background {
+  background-color: grey;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+ }

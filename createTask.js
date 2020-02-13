@@ -1,8 +1,6 @@
 /*
 Bầu cua cá cọp is a Vietnamese game involve with gambling. 
-
 Note: Everything should be working, but i want to add more players to the game and fix the css 
-
 */
 
 let diceA, diceB, diceC
@@ -182,7 +180,8 @@ function roll()
     document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Lobster = ' + p1Bet6
     document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Lobster = ' + p2Bet6
 
-    hold()
+    if(p1===0 && p2===0 && p3===0 && p4===0 )
+    end()
    
 }
 
@@ -215,17 +214,16 @@ function hold()
 
         current_player=4
     }
-    /*
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         document.getElementById('p1-background').style.backgroundColor = 'pink'    
         document.getElementById('p2-background').style.backgroundColor = 'grey'
         document.getElementById('p3-background').style.backgroundColor = 'grey'
         document.getElementById('p4-background').style.backgroundColor = 'grey'
-
         current_player=1
     }
-    */
+    
 }
 
 
@@ -293,7 +291,8 @@ function click1()
             }
         }
     }
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         if(p4===0)
         { bye1(current_player)
@@ -309,6 +308,7 @@ function click1()
             }
         }
     }
+    
 }
 
 function click2()
@@ -361,7 +361,8 @@ function click2()
             }
         }
     }
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         if(p4===0)
         { bye1(current_player)
@@ -377,6 +378,7 @@ function click2()
             }
         }
     }
+    
 }
 
 function click3()
@@ -429,7 +431,8 @@ function click3()
             }
         }
     }
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         if(p4===0)
         { bye1(current_player)
@@ -445,6 +448,7 @@ function click3()
             }
         }
     }
+    
 }
 
 function click4()
@@ -497,7 +501,8 @@ function click4()
             }
         }
     }
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         if(p4===0)
         { bye1(current_player)
@@ -513,6 +518,7 @@ function click4()
             }
         }
     }
+    
 }
 
 function click5()
@@ -565,6 +571,7 @@ function click5()
             }
         }
     }
+    
     else(current_player===4)
     {
         if(p4===0)
@@ -581,6 +588,7 @@ function click5()
             }
         }
     }
+    
 }
 
 function click6()
@@ -633,7 +641,8 @@ function click6()
             }
         }
     }
-    else(current_player===4)
+    
+    else if(current_player===4)
     {
         if(p4===0)
         { bye1(current_player)
@@ -649,23 +658,30 @@ function click6()
             }
         }
     }
+    
 }
 
 function end()
 {
-    if(p1 > p2)
+    if(p1 > p2 && p1 > p3 && p1 > p4)
     {
         confirm('YOU WIN PLAYER ONE! You had the most coins! ENJOY Your ' + p1 + ' coins' )
     }
-    else if(p2 > p1)
+    else if(p2 > p1 && p2 > p3 && p2 > p4)
     {
         confirm('YOU WIN PLAYER TWO! You had the most coins! ENJOY Your ' + p2 + ' coins' )
     }
-    else if(p1 === p2)
+    else if(p3 > p1 && p3 > p2 && p3 > p4)
     {
-        confirm('Its a tie...no1 lose but no1 win. You guys both have ' + p1 + ' coins')
+        confirm('YOU WIN PLAYER Three! You had the most coins! ENJOY Your ' + p2 + ' coins' )
+    }
+    else if(p4 > p1 && p4 > p2 && p4 > p3)
+    {
+        confirm('YOU WIN PLAYER Four! You had the most coins! ENJOY Your ' + p2 + ' coins' )
+    }
+    else
+    {
+        confirm('Its a tie... You guys all have ' + p1 + ' coins')
     }
 
 }
-
-
