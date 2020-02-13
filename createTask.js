@@ -1,6 +1,6 @@
 /*
 Bầu cua cá cọp is a Vietnamese game involve with gambling. 
-Note: Everything should be working, but i want to add more players to the game and fix the css 
+
 */
 
 let diceA, diceB, diceC
@@ -180,6 +180,15 @@ function roll()
     document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Lobster = ' + p1Bet6
     document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Lobster = ' + p2Bet6
 
+    document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
+    document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
+    document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Fruit = ' + p3Bet2
+    document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Fruit = ' + p4Bet2
+    document.getElementById('p3betB').innerHTML = 'Rooster = ' + p3Bet3 + ', Fish = ' + p3Bet4
+    document.getElementById('p4betB').innerHTML = 'Rooster = ' + p4Bet3 + ', Fish = ' + p4Bet4
+    document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Lobster = ' + p3Bet6
+    document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Lobster = ' + p4Bet6
+
     if(p1===0 && p2===0 && p3===0 && p4===0 )
     end()
    
@@ -221,6 +230,7 @@ function hold()
         document.getElementById('p2-background').style.backgroundColor = 'grey'
         document.getElementById('p3-background').style.backgroundColor = 'grey'
         document.getElementById('p4-background').style.backgroundColor = 'grey'
+
         current_player=1
     }
     
@@ -572,7 +582,7 @@ function click5()
         }
     }
     
-    else(current_player===4)
+    else if(current_player===4)
     {
         if(p4===0)
         {bye1(current_player)
@@ -625,7 +635,7 @@ function click6()
             }
         }
     }
-    else if(current_player===2)
+    else if(current_player===3)
     {
         if(p3===0)
         { bye1(current_player)
