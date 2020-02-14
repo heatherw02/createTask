@@ -23,7 +23,7 @@ function roll()
     document.getElementById('dice3-img').src = 'photos/pic' + diceC + '.jpg'
 
     let same=0
-    let deer=0,fruit=0, chick=0, fish=0,crab=0,lobster=0
+    let deer=0,calabash=0, chick=0, fish=0,crab=0,prawn=0
 
 
 
@@ -64,7 +64,7 @@ function roll()
         else
         same=1
 
-        fruit=same
+        calabash=same
     }
     if(diceA===3 || diceB===3 || diceC===3)
     {
@@ -144,24 +144,24 @@ function roll()
         else
         same=1
 
-        lobster=same
+        prawn=same
     }
 
     
 
    // the calculation
  
-            test1 = (p1Bet1 * deer) + (p1Bet2 * fruit) + (p1Bet3 * chick) + (p1Bet4 * fish) +  (p1Bet5 * crab) + (p1Bet6 * lobster)
+            test1 = (p1Bet1 * deer) + (p1Bet2 * calabash) + (p1Bet3 * chick) + (p1Bet4 * fish) +  (p1Bet5 * crab) + (p1Bet6 * prawn)
             p1 += test1
 
 
-            test2 = (p2Bet1 * deer) + (p2Bet2 * fruit) + (p2Bet3 * chick) + (p2Bet4 * fish) +  (p2Bet5 * crab) + (p2Bet6 * lobster)
+            test2 = (p2Bet1 * deer) + (p2Bet2 * calabash) + (p2Bet3 * chick) + (p2Bet4 * fish) +  (p2Bet5 * crab) + (p2Bet6 * prawn)
             p2 += test2
 
-            test3 = (p3Bet1 * deer) + (p3Bet2 * fruit) + (p3Bet3 * chick) + (p3Bet4 * fish) +  (p3Bet5 * crab) + (p3Bet6 * lobster)
+            test3 = (p3Bet1 * deer) + (p3Bet2 * calabash) + (p3Bet3 * chick) + (p3Bet4 * fish) +  (p3Bet5 * crab) + (p3Bet6 * prawn)
             p3 += test3
 
-            test4 = (p4Bet1 * deer) + (p4Bet2 * fruit) + (p4Bet3 * chick) + (p4Bet4 * fish) +  (p4Bet5 * crab) + (p4Bet6 * lobster)
+            test4 = (p4Bet1 * deer) + (p4Bet2 * calabash) + (p4Bet3 * chick) + (p4Bet4 * fish) +  (p4Bet5 * crab) + (p4Bet6 * prawn)
             p4 += test4
             
     //setting bets back to zero  
@@ -173,25 +173,45 @@ function roll()
 
     document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
     document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-    document.getElementById('p1betA').innerHTML = 'Bets: Deer = ' + p1Bet1 + ', Fruit = ' + p1Bet2
-    document.getElementById('p2betA').innerHTML = 'Bets: Deer = ' + p2Bet1 + ', Fruit = ' + p2Bet2
+    document.getElementById('p1betA').innerHTML = 'Bets: Deer = ' + p1Bet1 + ', Calabash = ' + p1Bet2
+    document.getElementById('p2betA').innerHTML = 'Bets: Deer = ' + p2Bet1 + ', Calabash = ' + p2Bet2
     document.getElementById('p1betB').innerHTML = 'Rooster = ' + p1Bet3 + ', Fish = ' + p1Bet4
     document.getElementById('p2betB').innerHTML = 'Rooster = ' + p2Bet3 + ', Fish = ' + p2Bet4
-    document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Lobster = ' + p1Bet6
-    document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Lobster = ' + p2Bet6
+    document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Prawn = ' + p1Bet6
+    document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Prawn = ' + p2Bet6
 
     document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
     document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-    document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Fruit = ' + p3Bet2
-    document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Fruit = ' + p4Bet2
+    document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Calabash = ' + p3Bet2
+    document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Calabash = ' + p4Bet2
     document.getElementById('p3betB').innerHTML = 'Rooster = ' + p3Bet3 + ', Fish = ' + p3Bet4
     document.getElementById('p4betB').innerHTML = 'Rooster = ' + p4Bet3 + ', Fish = ' + p4Bet4
-    document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Lobster = ' + p3Bet6
-    document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Lobster = ' + p4Bet6
+    document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Prawn = ' + p3Bet6
+    document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Prawn = ' + p4Bet6
 
     if(p1===0 && p2===0 && p3===0 && p4===0 )
     end()
    
+}
+
+function someMath(current_player,p1,p2,p3,p4)
+{
+    if(current_player===1)
+    {   p1--
+        return p1
+    }
+    else if(current_player===2)
+    {   p2--
+        return p2
+    }
+    else if(current_player===3)
+    {   p3--
+        return p3
+    }
+    else if(current_player===4)
+    {   p4--
+        return p4
+    }
 }
 
 function hold()
@@ -260,9 +280,9 @@ function click1()
         else
         {
         p1Bet1++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betA').innerHTML = 'Bets: Deer = ' + p1Bet1 + ', Fruit = ' + p1Bet2
+        document.getElementById('p1betA').innerHTML = 'Bets: Deer=' + p1Bet1 + ', Calabash=' + p1Bet2
             if(p1===0)
             {   bye2(current_player)
             }
@@ -277,9 +297,9 @@ function click1()
         else
         {
         p2Bet1++
-        p2--
+        p2 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-        document.getElementById('p2betA').innerHTML = 'Bets: Deer = ' + p2Bet1 + ', Fruit = ' + p2Bet2
+        document.getElementById('p2betA').innerHTML = 'Bets: Deer=' + p2Bet1 + ', Calabash=' + p2Bet2
             if(p2===0)
             {    bye2(current_player)
             }
@@ -293,9 +313,9 @@ function click1()
         else
         {
         p3Bet1++
-        p3--
+        p3 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-        document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Fruit = ' + p3Bet2
+        document.getElementById('p3betA').innerHTML = 'Bets: Deer=' + p3Bet1 + ', Calabash=' + p3Bet2
             if(p3===0)
             {    bye2(current_player)
             }
@@ -310,9 +330,9 @@ function click1()
         else
         {
         p4Bet1++
-        p4--
+        p4 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-        document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Fruit = ' + p4Bet2
+        document.getElementById('p4betA').innerHTML = 'Bets: Deer=' + p4Bet1 + ', Calabash=' + p4Bet2
             if(p4===0)
             {    bye2(current_player)
             }
@@ -331,9 +351,9 @@ function click2()
         else
         {
         p1Bet2++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betA').innerHTML = 'Bets: Deer = ' + p1Bet1 + ', Fruit = ' + p1Bet2
+        document.getElementById('p1betA').innerHTML = 'Bets: Deer=' + p1Bet1 + ', Calabash=' + p1Bet2
             if(p1===0)
             {   bye2(current_player)
             }
@@ -347,9 +367,9 @@ function click2()
         else
         {
         p2Bet2++
-        p2--
+        p2 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-        document.getElementById('p2betA').innerHTML = 'Bets: Deer = ' + p2Bet1 + ', Fruit = ' + p2Bet2
+        document.getElementById('p2betA').innerHTML = 'Bets: Deer=' + p2Bet1 + ', Calabash=' + p2Bet2
             if(p2===0)
             {   bye2(current_player)
             }
@@ -363,9 +383,9 @@ function click2()
         else
         {
         p3Bet2++
-        p3--
+        p3 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-        document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Fruit = ' + p3Bet2
+        document.getElementById('p3betA').innerHTML = 'Bets: Deer=' + p3Bet1 + ', Calabash=' + p3Bet2
             if(p3===0)
             {   bye2(current_player)
             }
@@ -380,9 +400,9 @@ function click2()
         else
         {
         p4Bet2++
-        p4--
+        p4 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-        document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Fruit = ' + p4Bet2
+        document.getElementById('p4betA').innerHTML = 'Bets: Deer=' + p4Bet1 + ', Calabash=' + p4Bet2
             if(p4===0)
             {   bye2(current_player)
             }
@@ -401,9 +421,9 @@ function click3()
         else
         {
         p1Bet3++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betB').innerHTML = 'Rooster = ' + p1Bet3 + ', Fish = ' + p1Bet4
+        document.getElementById('p1betB').innerHTML = 'Rooster=' + p1Bet3 + ', Fish=' + p1Bet4
             if(p1===0)
             {   bye2(current_player)
             }
@@ -417,9 +437,9 @@ function click3()
         else
         {
         p2Bet3++
-        p2--
+        p2 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-        document.getElementById('p2betB').innerHTML = 'Rooster = ' + p2Bet3 + ', Fish = ' + p2Bet4
+        document.getElementById('p2betB').innerHTML = 'Rooster=' + p2Bet3 + ', Fish=' + p2Bet4
             if(p2===0)
             {   bye2(current_player)
             }
@@ -433,9 +453,9 @@ function click3()
         else
         {
         p3Bet3++
-        p3--
+        p3 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-        document.getElementById('p3betB').innerHTML = 'Rooster = ' + p3Bet3 + ', Fish = ' + p3Bet4
+        document.getElementById('p3betB').innerHTML = 'Rooster=' + p3Bet3 + ', Fish=' + p3Bet4
             if(p2===0)
             {   bye2(current_player)
             }
@@ -450,9 +470,9 @@ function click3()
         else
         {
         p4Bet3++
-        p4--
+        p4 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-        document.getElementById('p4betB').innerHTML = 'Rooster = ' + p4Bet3 + ', Fish = ' + p4Bet4
+        document.getElementById('p4betB').innerHTML = 'Rooster=' + p4Bet3 + ', Fish=' + p4Bet4
             if(p4===0)
             {   bye2(current_player)
             }
@@ -471,9 +491,9 @@ function click4()
         else
         {
         p1Bet4++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betB').innerHTML = 'Rooster = ' + p1Bet3 + ', Fish = ' + p1Bet4
+        document.getElementById('p1betB').innerHTML = 'Rooster=' + p1Bet3 + ', Fish=' + p1Bet4
             if(p1===0)
             {  bye2(current_player)
             }
@@ -487,9 +507,9 @@ function click4()
         else
         {
         p2Bet4++
-        p2--
+        p2 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-        document.getElementById('p2betB').innerHTML = 'Rooster = ' + p2Bet3 + ', Fish = ' + p2Bet4
+        document.getElementById('p2betB').innerHTML = 'Rooster=' + p2Bet3 + ', Fish=' + p2Bet4
             if(p2===0)
             {   bye2(current_player)
             }
@@ -503,9 +523,9 @@ function click4()
         else
         {
         p3Bet4++
-        p3--
+        p3 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-        document.getElementById('p3betB').innerHTML = 'Rooster = ' + p3Bet3 + ', Fish = ' + p3Bet4
+        document.getElementById('p3betB').innerHTML = 'Rooster=' + p3Bet3 + ', Fish=' + p3Bet4
             if(p3===0)
             {   bye2(current_player)
             }
@@ -520,9 +540,9 @@ function click4()
         else
         {
         p4Bet4++
-        p4--
+        p4 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-        document.getElementById('p4betB').innerHTML = 'Rooster = ' + p4Bet3 + ', Fish = ' + p4Bet4
+        document.getElementById('p4betB').innerHTML = 'Rooster=' + p4Bet3 + ', Fish=' + p4Bet4
             if(p4===0)
             {   bye2(current_player)
             }
@@ -541,9 +561,9 @@ function click5()
         else
         {
         p1Bet5++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Lobster = ' + p1Bet6
+        document.getElementById('p1betC').innerHTML = 'Crab=' + p1Bet5 + ', Prawn=' + p1Bet6
             if(p1===0)
             {   bye2(current_player)
             }
@@ -557,9 +577,9 @@ function click5()
         else
         {
          p2Bet5++
-         p2--
+         p2 = someMath(current_player,p1,p2,p3,p4)
          document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-         document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Lobster = ' + p2Bet6
+         document.getElementById('p2betC').innerHTML = 'Crab=' + p2Bet5 + ', Prawn=' + p2Bet6
             if(p2===0)
             {   bye2(current_player)
             }
@@ -573,9 +593,9 @@ function click5()
         else
         {
          p3Bet5++
-         p3--
+         p3 = someMath(current_player,p1,p2,p3,p4)
          document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-         document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Lobster = ' + p3Bet6
+         document.getElementById('p3betC').innerHTML = 'Crab=' + p3Bet5 + ', Prawn=' + p3Bet6
             if(p3===0)
             {   bye2(current_player)
             }
@@ -590,9 +610,9 @@ function click5()
         else
         {
          p4Bet5++
-         p4--
+         p4 = someMath(current_player,p1,p2,p3,p4)
          document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-         document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Lobster = ' + p4Bet6
+         document.getElementById('p4betC').innerHTML = 'Crab=' + p4Bet5 + ', Prawn=' + p4Bet6
             if(p4===0)
             {   bye2(current_player)
             }
@@ -603,6 +623,7 @@ function click5()
 
 function click6()
 {
+    stuff = someMath(current_player,p1,p2,p3,p4)
     if(current_player===1)
     {
         if(p1===0)
@@ -611,9 +632,9 @@ function click6()
         else
         {
         p1Bet6++
-        p1--
+        p1 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
-        document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Lobster = ' + p1Bet6
+        document.getElementById('p1betC').innerHTML = 'Crab=' + p1Bet5 + ', Prawn=' + p1Bet6
             if(p1===0)
             {   bye2(current_player)
             }
@@ -627,9 +648,9 @@ function click6()
         else
         {
         p2Bet6++
-        p2--
+        p2 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-        document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Lobster = ' + p2Bet6
+        document.getElementById('p2betC').innerHTML = 'Crab=' + p2Bet5 + ', Prawn=' + p2Bet6
             if(p2===0)
             {   bye2(current_player)
             }
@@ -643,9 +664,9 @@ function click6()
         else
         {
         p3Bet6++
-        p3--
+        p3 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
-        document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Lobster = ' + p3Bet6
+        document.getElementById('p3betC').innerHTML = 'Crab=' + p3Bet5 + ', Prawn=' + p3Bet6
             if(p3===0)
             {   bye2(current_player)
             }
@@ -660,9 +681,9 @@ function click6()
         else
         {
         p4Bet6++
-        p4--
+        p4 = someMath(current_player,p1,p2,p3,p4)
         document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-        document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Lobster = ' + p4Bet6
+        document.getElementById('p4betC').innerHTML = 'Crab=' + p4Bet5 + ', Prawn=' + p4Bet6
             if(p4===0)
             {   bye2(current_player)
             }
