@@ -173,21 +173,21 @@ function roll()
 
     document.getElementById('p1-coins').innerHTML = 'Coins: ' + p1
     document.getElementById('p2-coins').innerHTML = 'Coins: ' + p2
-    document.getElementById('p1betA').innerHTML = 'Bets: Deer = ' + p1Bet1 + ', Calabash = ' + p1Bet2
-    document.getElementById('p2betA').innerHTML = 'Bets: Deer = ' + p2Bet1 + ', Calabash = ' + p2Bet2
-    document.getElementById('p1betB').innerHTML = 'Rooster = ' + p1Bet3 + ', Fish = ' + p1Bet4
-    document.getElementById('p2betB').innerHTML = 'Rooster = ' + p2Bet3 + ', Fish = ' + p2Bet4
-    document.getElementById('p1betC').innerHTML = 'Crab = ' + p1Bet5 + ', Prawn = ' + p1Bet6
-    document.getElementById('p2betC').innerHTML = 'Crab = ' + p2Bet5 + ', Prawn = ' + p2Bet6
+    document.getElementById('p1betA').innerHTML = 'Bets: Deer=' + p1Bet1 + ', Calabash=' + p1Bet2
+    document.getElementById('p2betA').innerHTML = 'Bets: Deer=' + p2Bet1 + ', Calabash=' + p2Bet2
+    document.getElementById('p1betB').innerHTML = 'Rooster=' + p1Bet3 + ', Fish=' + p1Bet4
+    document.getElementById('p2betB').innerHTML = 'Rooster=' + p2Bet3 + ', Fish=' + p2Bet4
+    document.getElementById('p1betC').innerHTML = 'Crab=' + p1Bet5 + ', Prawn=' + p1Bet6
+    document.getElementById('p2betC').innerHTML = 'Crab=' + p2Bet5 + ', Prawn=' + p2Bet6
 
     document.getElementById('p3-coins').innerHTML = 'Coins: ' + p3
     document.getElementById('p4-coins').innerHTML = 'Coins: ' + p4
-    document.getElementById('p3betA').innerHTML = 'Bets: Deer = ' + p3Bet1 + ', Calabash = ' + p3Bet2
-    document.getElementById('p4betA').innerHTML = 'Bets: Deer = ' + p4Bet1 + ', Calabash = ' + p4Bet2
-    document.getElementById('p3betB').innerHTML = 'Rooster = ' + p3Bet3 + ', Fish = ' + p3Bet4
-    document.getElementById('p4betB').innerHTML = 'Rooster = ' + p4Bet3 + ', Fish = ' + p4Bet4
-    document.getElementById('p3betC').innerHTML = 'Crab = ' + p3Bet5 + ', Prawn = ' + p3Bet6
-    document.getElementById('p4betC').innerHTML = 'Crab = ' + p4Bet5 + ', Prawn = ' + p4Bet6
+    document.getElementById('p3betA').innerHTML = 'Bets: Deer=' + p3Bet1 + ', Calabash=' + p3Bet2
+    document.getElementById('p4betA').innerHTML = 'Bets: Deer=' + p4Bet1 + ', Calabash=' + p4Bet2
+    document.getElementById('p3betB').innerHTML = 'Rooster=' + p3Bet3 + ', Fish=' + p3Bet4
+    document.getElementById('p4betB').innerHTML = 'Rooster=' + p4Bet3 + ', Fish=' + p4Bet4
+    document.getElementById('p3betC').innerHTML = 'Crab=' + p3Bet5 + ', Prawn=' + p3Bet6
+    document.getElementById('p4betC').innerHTML = 'Crab=' + p4Bet5 + ', Prawn=' + p4Bet6
 
     if(p1===0 && p2===0 && p3===0 && p4===0 )
     end()
