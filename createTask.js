@@ -5,7 +5,7 @@ Bầu cua cá cọp is a Vietnamese game involve with gambling.
 
 let diceA, diceB, diceC
 let p1=10, p2=10, p3=10, p4=10 //nums of player's coins
-let p1Bet1=0, p1Bet2=0, p1Bet3=0, p1Bet4=0, p1Bet5=0, p1Bet6=0 //player one bets
+let p1Bet1=0, p1Bet2=0, p1Bet3=0, p1Bet4=0, p1Bet5=0, p1Bet6=0 //player's bets
 let p2Bet1=0, p2Bet2=0, p2Bet3=0, p2Bet4=0, p2Bet5=0, p2Bet6=0
 let p3Bet1=0, p3Bet2=0, p3Bet3=0, p3Bet4=0, p3Bet5=0, p3Bet6=0
 let p4Bet1=0, p4Bet2=0, p4Bet3=0, p4Bet4=0, p4Bet5=0, p4Bet6=0
@@ -704,15 +704,15 @@ function end()
     }
     else if(p3 > p1 && p3 > p2 && p3 > p4)
     {
-        confirm('YOU WIN PLAYER Three! You had the most coins! ENJOY Your ' + p2 + ' coins' )
+        confirm('YOU WIN PLAYER Three! You had the most coins! ENJOY Your ' + p3 + ' coins' )
     }
     else if(p4 > p1 && p4 > p2 && p4 > p3)
     {
-        confirm('YOU WIN PLAYER Four! You had the most coins! ENJOY Your ' + p2 + ' coins' )
+        confirm('YOU WIN PLAYER Four! You had the most coins! ENJOY Your ' + p4 + ' coins' )
     }
     else
     {
-        confirm('Its a tie... You guys all have ' + p1 + ' coins')
+        confirm('hmm noone has the MOST coins')
     }
 
 }
